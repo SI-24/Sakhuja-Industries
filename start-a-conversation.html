@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Conversation | Sakhuja Industries Pvt. Ltd.</title>
+<meta name="description" content="Contact SIPL to discuss technology commercialization, manufacturing integration, strategic electronics, government &amp; R&amp;D collaboration, or partnership opportunities.">
+<link rel="icon" href="assets/images/sipl-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ============ PAGE-SPECIFIC: start-a-conversation ============ */
+
+  /* Compact hero — single image, minimal copy */
+  .contact-hero{padding:170px 0 84px;}
+  .contact-hero p.lead{margin-top:18px;}
+
+  /* Six inquiry cards — no imagery, icon-free, text-led */
+  .inquiry-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;
+  }
+  @media (max-width:900px){ .inquiry-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .inquiry-grid{grid-template-columns:1fr;} }
+  .inquiry-card{
+    text-align:left;width:100%;cursor:pointer;
+    border:1px solid var(--line);border-radius:var(--radius-lg);
+    background:var(--white);padding:26px 24px;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    font-family:inherit;
+  }
+  .inquiry-card:hover, .inquiry-card:focus-visible{
+    transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--line-strong);outline:none;
+  }
+  .inquiry-card .num{
+    font-family:var(--display);font-size:11px;font-weight:700;
+    color:var(--sky);letter-spacing:0.1em;display:block;margin-bottom:14px;
+  }
+  .inquiry-card h3{font-size:16.5px;margin-bottom:8px;}
+  .inquiry-card p{font-size:13.5px;margin:0 0 14px;}
+  .inquiry-card .go{
+    font-family:var(--display);font-size:12px;font-weight:700;color:var(--blue);
+    letter-spacing:0.02em;
+  }
+
+  /* Contact section — form + direct-contact panel */
+  .contact-section{background:var(--bg-soft);}
+  .contact-layout{
+    display:grid;grid-template-columns:1.5fr 1fr;gap:44px;margin-top:52px;align-items:start;
+  }
+  @media (max-width:900px){ .contact-layout{grid-template-columns:1fr;} }
+
+  .contact-form{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:38px;box-shadow:var(--shadow-sm);
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:560px){ .form-row{grid-template-columns:1fr;} }
+  .field{margin-bottom:20px;}
+  .field label{
+    display:block;font-family:var(--display);font-size:12px;font-weight:700;
+    letter-spacing:0.04em;color:var(--navy-deep);margin-bottom:8px;
+    text-transform:uppercase;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;font-family:var(--body);font-size:14.5px;color:var(--text);
+    background:var(--white);border:1.5px solid var(--line-strong);border-radius:var(--radius);
+    padding:13px 14px;transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(63,114,175,0.14);
+  }
+  .field textarea{resize:vertical;min-height:130px;}
+  .field .req{color:var(--sky);}
+  .form-note{font-size:12.5px;color:var(--text-faint);margin-top:-4px;margin-bottom:22px;}
+  .form-status{font-size:13.5px;margin-top:16px;display:none;}
+  .form-status.show{display:block;}
+
+  .contact-panel{
+    background:var(--navy-deep);border-radius:var(--radius-lg);
+    padding:38px 32px;color:var(--white);
+  }
+  .contact-panel .eyebrow{margin-bottom:6px;}
+  .contact-panel h3{color:var(--white);font-size:18px;margin:14px 0 10px;}
+  .contact-panel p{color:rgba(255,255,255,0.72);font-size:13.5px;}
+  .contact-panel .email-link{
+    display:block;margin-top:18px;font-family:var(--display);font-weight:700;
+    font-size:17px;color:var(--sky);word-break:break-word;
+  }
+  .contact-panel .email-link:hover{color:var(--white);}
+  .contact-panel hr{border:none;border-top:1px solid rgba(255,255,255,0.14);margin:26px 0;}
+  .contact-panel .meta-line{
+    display:flex;justify-content:space-between;font-size:13px;
+    color:rgba(255,255,255,0.65);padding:10px 0;border-top:1px solid rgba(255,255,255,0.1);
+  }
+  .contact-panel .meta-line:first-of-type{border-top:none;}
+  .contact-panel .meta-line b{color:rgba(255,255,255,0.92);font-weight:600;}
+
+  /* Direct contact — large centered email */
+  .direct-email{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(22px,3.2vw,32px);color:var(--blue);letter-spacing:-0.01em;
+  }
+  .direct-email:hover{color:var(--sky);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/sipl-logo.png" alt="Sakhuja Industries Pvt Ltd" class="logo-img">
+      <span class="logo-text">SAKHUJA INDUSTRIES<span>PVT LTD &nbsp;·&nbsp; INDIA</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="links">
+      <a href="index.html#what-we-do">Home</a>
+      <a href="technology-commercialization.html">Commercialization</a>
+      <a href="defence-strategic-electronics.html">Defence &amp; Electronics</a>
+      <a href="index.html#pillars">Capabilities</a>
+      <a href="start-a-conversation.html" class="nav-cta" aria-current="page">Start a Conversation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="page-hero contact-hero">
+  <div class="page-hero-media">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2200&q=80" alt="Strategic technology partnership and collaboration">
+  </div>
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Start a Conversation</div>
+    <div class="eyebrow on-dark">GET IN TOUCH</div>
+    <h1>Start a Conversation<span class="accent">.</span></h1>
+    <p class="lead">Tell us what you're working on. We'll route it to the right people at SIPL and respond promptly.</p>
+    <div class="cta-row" style="margin-top:34px;">
+      <a href="#contact-form" class="btn btn-primary">Send a Message →</a>
+    
+    </div>
+  </div>
+</section>
+
+<!-- ================= INQUIRY TYPE ================= -->
+<section class="section" id="inquiry">
+  <div class="wrap section-inner reveal">
+    <div class="eyebrow">WHAT BRINGS YOU HERE</div>
+    <h2>Select the Nature of Your Inquiry</h2>
+
+    <div class="inquiry-grid">
+      <button type="button" class="inquiry-card" data-topic="Technology Commercialization">
+        <span class="num">01</span>
+        <h3>Technology Commercialization</h3>
+        <p>Bringing validated IP to market.</p>
+        <span class="go">Select →</span>
+      </button>
+      <button type="button" class="inquiry-card" data-topic="Manufacturing Integration">
+        <span class="num">02</span>
+        <h3>Manufacturing Integration</h3>
+        <p>Embedding technology into production.</p>
+        <span class="go">Select →</span>
+      </button>
+      <button type="button" class="inquiry-card" data-topic="Strategic Electronics">
+        <span class="num">03</span>
+        <h3>Strategic Electronics</h3>
+        <p>Critical systems and electronics.</p>
+        <span class="go">Select →</span>
+      </button>
+      <button type="button" class="inquiry-card" data-topic="Government & R&D Collaboration">
+        <span class="num">04</span>
+        <h3>Government &amp; R&amp;D Collaboration</h3>
+        <p>Institutional and research partnerships.</p>
+        <span class="go">Select →</span>
+      </button>
+      <button type="button" class="inquiry-card" data-topic="Partnership Opportunities">
+        <span class="num">05</span>
+        <h3>Partnership Opportunities</h3>
+        <p>Strategic and investment engagement.</p>
+        <span class="go">Select →</span>
+      </button>
+      <button type="button" class="inquiry-card" data-topic="General Inquiry">
+        <span class="num">06</span>
+        <h3>General Inquiry</h3>
+        <p>Anything else you'd like to discuss.</p>
+        <span class="go">Select →</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="section contact-section" id="contact-form">
+  <div class="wrap section-inner reveal">
+    <div class="eyebrow">SEND A MESSAGE</div>
+    <h2>Reach Out to SIPL</h2>
+
+    <div class="contact-layout">
+      <form class="contact-form" id="siplContactForm" action="mailto:contact@sakhujaindustries.com" method="POST" enctype="text/plain">
+        <div class="form-row">
+          <div class="field">
+            <label for="fullName">Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="Name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="Email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="organization">Organization</label>
+            <input type="text" id="organization" name="Organization" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="topic">Inquiry Type <span class="req">*</span></label>
+            <select id="topic" name="Inquiry Type" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Technology Commercialization</option>
+              <option>Manufacturing Integration</option>
+              <option>Strategic Electronics</option>
+              <option>Government &amp; R&amp;D Collaboration</option>
+              <option>Partnership Opportunities</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span class="req">*</span></label>
+          <textarea id="message" name="Message" required placeholder="Briefly describe your technology, organization, or partnership interest."></textarea>
+        </div>
+
+        <p class="form-note">Submitting opens your email client with this message addressed to contact@sakhujaindustries.com.</p>
+
+        <button type="submit" class="btn btn-primary">Send Message →</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+
+      <aside class="contact-panel">
+        <div class="eyebrow on-dark">DIRECT CONTACT</div>
+        <h3>Prefer Email?</h3>
+        <p>Write to us directly and our team will route your message appropriately.</p>
+        <a href="mailto:contact@sakhujaindustries.com" class="email-link">contact@sakhujaindustries.com</a>
+        <hr>
+        <div class="meta-line"><span>Response Time</span><b>1–2 Business Days</b></div>
+        <div class="meta-line"><span>Location</span><b>India</b></div>
+        <div class="meta-line"><span>Recognition</span><b>DPIIT-Recognized</b></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSING CTA ================= -->
+<section class="cta-section reveal" id="cta">
+  <div class="wrap section-inner">
+    <h2>Let's Explore What's Possible<span class="accent">.</span></h2>
+    <div class="cta-row">
+      <a href="mailto:contact@sakhujaindustries.com" class="btn btn-primary">Email SIPL →</a>
+      <a href="index.html" class="btn btn-ghost">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo">
+          <img src="assets/images/sipl-logo.png" alt="Sakhuja Industries Pvt Ltd" class="logo-img">
+          <span class="logo-text">SAKHUJA INDUSTRIES<span>PVT LTD</span></span>
+        </a>
+        <p class="footer-tagline">Commercialization and industrialization partner for indigenous deep-tech and strategic electronics.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="index.html#what-we-do">What We Do</a>
+          <a href="index.html#pillars">Capabilities</a>
+          <a href="index.html#why">Why SIPL</a>
+        </div>
+        <div class="footer-col">
+          <h4>Focus Areas</h4>
+          <a href="technology-commercialization.html">Technology Commercialization</a>
+          <a href="defence-strategic-electronics.html">Defence &amp; Strategic Electronics</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:contact@sakhujaindustries.com">contact@sakhujaindustries.com</a>
+          <a href="start-a-conversation.html">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-meta">SAKHUJA INDUSTRIES PVT LTD &nbsp;•&nbsp; DPIIT-RECOGNIZED &nbsp;•&nbsp; INDIA</div>
+      <div class="footer-meta">© <span id="year"></span> ALL RIGHTS RESERVED</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Inquiry card → preselect topic in form and scroll to it
+  document.addEventListener('DOMContentLoaded', function () {
+    var cards = document.querySelectorAll('.inquiry-card');
+    var topicSelect = document.getElementById('topic');
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var value = card.getAttribute('data-topic');
+        if (topicSelect) {
+          Array.prototype.forEach.call(topicSelect.options, function (opt) {
+            if (opt.text.replace(/&/g, '&').indexOf(value.split(' & ')[0]) !== -1 || opt.text === value) {
+              topicSelect.value = opt.value;
+            }
+          });
+          // Fallback direct match
+          if (!topicSelect.value) { topicSelect.value = value; }
+        }
+        var formSection = document.getElementById('contact-form');
+        if (formSection) { formSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        var nameField = document.getElementById('fullName');
+        if (nameField) { setTimeout(function () { nameField.focus(); }, 500); }
+      });
+    });
+
+    // Build a clean mailto submission
+    var form = document.getElementById('siplContactForm');
+    var status = document.getElementById('formStatus');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('fullName').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var org = document.getElementById('organization').value.trim();
+        var topic = document.getElementById('topic').value;
+        var message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !topic || !message) {
+          status.textContent = 'Please complete all required fields.';
+          status.classList.add('show');
+          return;
+        }
+
+        var subject = 'SIPL Inquiry: ' + topic;
+        var body =
+          'Name: ' + name + '\n' +
+          'Email: ' + email + '\n' +
+          (org ? 'Organization: ' + org + '\n' : '') +
+          'Inquiry Type: ' + topic + '\n\n' +
+          'Message:\n' + message;
+
+        var mailto = 'mailto:contact@sakhujaindustries.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+
+        window.location.href = mailto;
+
+        status.textContent = 'Opening your email client to send this message…';
+        status.classList.add('show');
+      });
+    }
+  });
+</script>
+</body>
+</html>
