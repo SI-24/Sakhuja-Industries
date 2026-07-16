@@ -1,4 +1,137 @@
-<h1>Thank You</h1>
-<p>Your message has been submitted successfully.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Sakhuja Industries Pvt. Ltd.</title>
+<meta name="description" content="Thank you for contacting SIPL. Your inquiry has been received successfully.">
+<link rel="icon" href="assets/images/sipl-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ============ PAGE-SPECIFIC: thank-you ============ */
+  .thankyou-hero{
+    padding:200px 0 140px;
+    min-height:72vh;
+    display:flex;
+    align-items:center;
+  }
+  .thankyou-hero .wrap{
+    text-align:center;
+    max-width:680px;
+  }
+  .thankyou-hero .eyebrow{justify-content:center;}
+  .thankyou-hero h1{
+    max-width:none;
+    margin:26px auto 18px;
+  }
+  .thankyou-hero .subhead{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(16px,2vw,19px);
+    color:rgba(255,255,255,0.92);
+    margin-bottom:22px;
+  }
+  .thankyou-hero p.lead{
+    margin:0 auto;
+    max-width:520px;
+  }
+  .thankyou-hero .success-badge{
+    width:74px;height:74px;
+    margin:0 auto 30px;
+    border-radius:50%;
+    background:rgba(0,174,239,0.14);
+    border:1.5px solid rgba(0,174,239,0.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .thankyou-hero .success-badge svg{width:32px;height:32px;}
+  .thankyou-hero .cta-row{
+    justify-content:center;
+    margin-top:40px;
+  }
+</style>
+</head>
+<body>
 
-<a href="index.html">Return to Home</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/sipl-logo.png" alt="Sakhuja Industries Pvt Ltd" class="logo-img">
+      <span class="logo-text">SAKHUJA INDUSTRIES<span>PVT LTD &nbsp;·&nbsp; INDIA</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="links">
+      <a href="index.html#what-we-do">Home</a>
+      <a href="technology-commercialization.html">Commercialization</a>
+      <a href="defence-strategic-electronics.html">Defence &amp; Electronics</a>
+      <a href="index.html#pillars">Capabilities</a>
+      <a href="start-a-conversation.html" class="nav-cta">Start a Conversation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= THANK YOU HERO ================= -->
+<section class="page-hero thankyou-hero">
+  <div class="page-hero-media">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2200&q=80" alt="Thank you for contacting Sakhuja Industries">
+  </div>
+  <div class="wrap">
+    <div class="success-badge">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 12.5L9.5 18L20 6" stroke="#00AEEF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="eyebrow on-dark">MESSAGE RECEIVED</div>
+    <h1>Thank You<span class="accent">.</span></h1>
+    <p class="subhead">Your message has been received successfully.</p>
+    <p class="lead">Thank you for contacting Sakhuja Industries Pvt. Ltd. A member of the SIPL team will review your inquiry and respond as appropriate.</p>
+    <div class="cta-row">
+      <a href="index.html" class="btn btn-primary">Return to Homepage →</a>
+      <a href="capabilities.html" class="btn btn-ghost">Explore Capabilities</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo">
+          <img src="assets/images/sipl-logo.png" alt="Sakhuja Industries Pvt Ltd" class="logo-img">
+          <span class="logo-text">SAKHUJA INDUSTRIES<span>PVT LTD</span></span>
+        </a>
+        <p class="footer-tagline">Commercialization and industrialization partner for indigenous deep-tech and strategic electronics.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="index.html#what-we-do">What We Do</a>
+          <a href="index.html#pillars">Capabilities</a>
+          <a href="index.html#why">Why SIPL</a>
+        </div>
+        <div class="footer-col">
+          <h4>Focus Areas</h4>
+          <a href="technology-commercialization.html">Technology Commercialization</a>
+          <a href="defence-strategic-electronics.html">Defence &amp; Strategic Electronics</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:contact@sakhujaindustries.com">contact@sakhujaindustries.com</a>
+          <a href="start-a-conversation.html">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-meta">SAKHUJA INDUSTRIES PVT LTD &nbsp;•&nbsp; DPIIT-RECOGNIZED &nbsp;•&nbsp; INDIA</div>
+      <div class="footer-meta">© <span id="year"></span> ALL RIGHTS RESERVED</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
