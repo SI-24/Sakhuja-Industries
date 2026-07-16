@@ -195,7 +195,11 @@
     <h2>Reach Out to SIPL</h2>
 
     <div class="contact-layout">
-      <form class="contact-form" id="siplContactForm" action="mailto:contact@sakhujaindustries.com" method="POST" enctype="text/plain">
+      <form class="contact-form" id="siplContactForm" action="https://formsubmit.co/contact@sakhujaindustries.com" method="POST">
+	<input type="hidden" name="_subject" value="New SIPL Website Inquiry">
+	<input type="hidden" name="_captcha" value="false">
+	<input type="hidden" name="_template" value="table">
+	<input type="hidden" name="_next" value="https://www.sakhujaindustries.com/thank-you.html">
         <div class="form-row">
           <div class="field">
             <label for="fullName">Full Name <span class="req">*</span></label>
@@ -324,41 +328,26 @@
     });
 
     // Build a clean mailto submission
-    var form = document.getElementById('siplContactForm');
-    var status = document.getElementById('formStatus');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var name = document.getElementById('fullName').value.trim();
-        var email = document.getElementById('email').value.trim();
-        var org = document.getElementById('organization').value.trim();
-        var topic = document.getElementById('topic').value;
-        var message = document.getElementById('message').value.trim();
+    document.addEventListener('DOMContentLoaded', function () {
+    var cards = document.querySelectorAll('.inquiry-card');
+    var topicSelect = document.getElementById('topic');
 
-        if (!name || !email || !topic || !message) {
-          status.textContent = 'Please complete all required fields.';
-          status.classList.add('show');
-          return;
-        }
+    cards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            var value = card.getAttribute('data-topic');
 
-        var subject = 'SIPL Inquiry: ' + topic;
-        var body =
-          'Name: ' + name + '\n' +
-          'Email: ' + email + '\n' +
-          (org ? 'Organization: ' + org + '\n' : '') +
-          'Inquiry Type: ' + topic + '\n\n' +
-          'Message:\n' + message;
+            if (topicSelect) {
+                topicSelect.value = value;
+            }
 
-        var mailto = 'mailto:contact@sakhujaindustries.com'
-          + '?subject=' + encodeURIComponent(subject)
-          + '&body=' + encodeURIComponent(body);
-
-        window.location.href = mailto;
-
-        status.textContent = 'Opening your email client to send this message…';
-        status.classList.add('show');
-      });
-    }
+            document.getElementById('contact-form')
+                .scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+        });
+    });
+});
   });
 </script>
 </body>
