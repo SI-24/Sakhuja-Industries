@@ -235,7 +235,7 @@
           <textarea id="message" name="Message" required placeholder="Briefly describe your technology, organization, or partnership interest."></textarea>
         </div>
 
-        <p class="form-note">Submitting opens your email client with this message addressed to contact@sakhujaindustries.com.</p>
+        <p class="form-note">Your message will be sent directly to the SIPL team.</p>
 
         <button type="submit" class="btn btn-primary">Send Message →</button>
         <p class="form-status" id="formStatus"></p>
@@ -303,52 +303,34 @@
 </footer>
 
 <script src="script.js"></script>
+
 <script>
-  // Inquiry card → preselect topic in form and scroll to it
-  document.addEventListener('DOMContentLoaded', function () {
-    var cards = document.querySelectorAll('.inquiry-card');
-    var topicSelect = document.getElementById('topic');
-    cards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        var value = card.getAttribute('data-topic');
-        if (topicSelect) {
-          Array.prototype.forEach.call(topicSelect.options, function (opt) {
-            if (opt.text.replace(/&/g, '&').indexOf(value.split(' & ')[0]) !== -1 || opt.text === value) {
-              topicSelect.value = opt.value;
-            }
-          });
-          // Fallback direct match
-          if (!topicSelect.value) { topicSelect.value = value; }
-        }
-        var formSection = document.getElementById('contact-form');
-        if (formSection) { formSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-        var nameField = document.getElementById('fullName');
-        if (nameField) { setTimeout(function () { nameField.focus(); }, 500); }
-      });
-    });
+document.addEventListener('DOMContentLoaded', function () {
 
-    // Build a clean mailto submission
-    document.addEventListener('DOMContentLoaded', function () {
-    var cards = document.querySelectorAll('.inquiry-card');
-    var topicSelect = document.getElementById('topic');
+    const cards = document.querySelectorAll('.inquiry-card');
+    const topicSelect = document.getElementById('topic');
 
-    cards.forEach(function (card) {
-        card.addEventListener('click', function () {
-            var value = card.getAttribute('data-topic');
+    cards.forEach(function(card){
 
-            if (topicSelect) {
+        card.addEventListener('click', function(){
+
+            const value = card.getAttribute('data-topic');
+
+            if(topicSelect){
                 topicSelect.value = value;
             }
 
             document.getElementById('contact-form')
                 .scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                    behavior:'smooth',
+                    block:'start'
                 });
         });
+
     });
+
 });
-  });
 </script>
+
 </body>
 </html>
